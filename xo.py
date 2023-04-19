@@ -5,21 +5,39 @@ root = Tk()
 root.title('')
 root.iconbitmap('')
 
+# x starts the game
+clicked = True 
+count = 0
+
 def b_click(b):
-    pass
+    global clicked, count
+
+    if b["text"] == " " and clicked == True:
+        b["text"] = "X"
+        clicked = False
+        count += 1 
+    elif b["text"] == " " and clicked == False:
+        b["text"] = "O"
+        clicked = True
+        count += 1
+    else:
+        messagebox.showerror("Tic Tac Toe", "Box has already been selected")
+
+
+
 
 #Buttons 
-b1 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b1))
-b2 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b2))
-b3 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b3))
+b1 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b1))
+b2 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b2))
+b3 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b3))
 
-b4 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b4))
-b5 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b5))
-b6 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b6))
+b4 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b4))
+b5 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b5))
+b6 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b6))
 
-b7 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b7))
-b8 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b8))
-b9 = Button (root, text= "", font= ("Helvetica", 20), width=6, bg="Silver", command= lambda : b_click(b9))
+b7 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b7))
+b8 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b8))
+b9 = Button (root, text= "", font= ("Helvetica", 20), width=6, height=4, bg="Silver", command= lambda : b_click(b9))
 
 #Grid the Buttons
 b1.grid(row=0, column=0)
